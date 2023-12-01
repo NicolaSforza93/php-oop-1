@@ -14,7 +14,7 @@ $serie3 = new Serie('Stranger Things', 'Inglese', 3, 4);
 $serie4 = new Serie('Game of Thrones', 'Inglese', 4, 8);
 $serie5 = new Serie('The Mentalist', 'Inglese', 4, 7);
 
-var_dump($movie1 instanceof Production);
+// var_dump($movie1 instanceof Movie);
 
 
 $productions = [
@@ -54,6 +54,11 @@ $productions = [
                             <h5 class="card-title">Titolo: <?= $production->title ?></h5>
                             <p class="card-text mb-0">Lingua: <?= $production->getLanguage() ?></p>
                             <p class="card-text mb-0">Valutazione: <?= $production->rating ?> stelle</p>
+                            <?php if ($production instanceof Movie) {
+                            ?> <p class="card-text mb-0">Durata: <?= $production->getDuration() ?></p>
+                            <?php } elseif ($production instanceof Serie) {
+                            ?> <p class="card-text mb-0">Stagioni: <?= $production->getSeason() ?></p>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
