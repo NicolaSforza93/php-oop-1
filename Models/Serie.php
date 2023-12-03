@@ -6,9 +6,9 @@ class Serie extends Production
 {
     protected $season;
 
-    function __construct(string $_title, string $_language, int $_rating, int $_season)
+    function __construct(string $_poster, string $_title, string $_language, int $_rating, int $_season)
     {
-        parent::__construct($_title, $_language, $_rating);
+        parent::__construct($_poster, $_title, $_language, $_rating);
         $this->season = $_season;
     }
 
